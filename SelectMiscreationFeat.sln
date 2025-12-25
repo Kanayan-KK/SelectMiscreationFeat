@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectMiscreationFeat", "SelectMiscreationFeat.csproj", "{5609A1D7-8EC6-4E2D-BEB9-6FE79F244366}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5609A1D7-8EC6-4E2D-BEB9-6FE79F244366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5609A1D7-8EC6-4E2D-BEB9-6FE79F244366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5609A1D7-8EC6-4E2D-BEB9-6FE79F244366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5609A1D7-8EC6-4E2D-BEB9-6FE79F244366}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

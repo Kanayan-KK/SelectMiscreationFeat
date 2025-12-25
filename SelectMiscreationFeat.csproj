@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Platforms>AnyCPU</Platforms>
+        <LangVersion>preview</LangVersion>
+        <Nullable>enable</Nullable>
+        <RootNamespace>SelectMiscreationFeat</RootNamespace>
+        <AssemblyName>SelectMiscreationFeat</AssemblyName>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+        <OutputPath>$(ElinGamePath)\Package\Mod_$(AssemblyName)\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+        <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <Deterministic>false</Deterministic>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Remove="package\**"/>
+        <Compile Update="Plugin.cs">
+          <DependentUpon>package</DependentUpon>
+        </Compile>
+        <Compile Update="AsmInfo.cs">
+          <DependentUpon>package</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Remove="package\**"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="package\"/>
+        <None Remove="Directory.Build.props"/>
+        <None Remove="LICENSE"/>
+        <None Remove="README.md"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+    <Target Name="CopyAssets" AfterTargets="AfterBuild">
+        <ItemGroup>
+            <Assets Include="package\**\*.*"/>
+        </ItemGroup>
+        <Copy
+                SourceFiles="@(Assets)"
+                DestinationFiles="@(Assets->'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')"
+                SkipUnchangedFiles="true"
+        />
+    </Target>
+</Project>

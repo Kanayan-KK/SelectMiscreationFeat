@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+    <title>SelectMiscreationFeat</title>
+    <id>SelectMiscreationFeat</id>
+    <author>Kanayan-KK</author>
+    <loadPriority>100</loadPriority>
+    <version>0.23.252</version>
+    <tags>General,QoL,Cheat</tags>
+    <description>
+        [hr][/hr]
+        [hr][/hr]
+        [hr][/hr]
+        [url=https://github.com/Kanayan-KK/SelectMiscreationFeat] SourceCode [/url]
+    </description>
+    <builtin>false</builtin>
+    <visibility>Public</visibility>
+</Meta>
