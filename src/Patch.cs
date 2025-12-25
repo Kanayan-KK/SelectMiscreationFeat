@@ -84,6 +84,7 @@ namespace SelectMiscreationFeat
 
             // UIを表示
             EClass.ui.AddLayer<LayerList>()
+                .SetSize(Plugin.Instance?.WindowWidth?.Value ?? 1000)
                 .SetList2(
                     candidates,
                     GetGeneSummary,
@@ -100,13 +101,12 @@ namespace SelectMiscreationFeat
                         // 続行
                         SelectGenes(chara, remaining - 1, step + 1);
                     },
-                    (t, item) =>
+                    (_, item) =>
                     {
                         // テキストの自動改行を無効化
                         item.button1.mainText.horizontalOverflow = HorizontalWrapMode.Overflow;
                     }
                 )
-                .SetSize(1000)
                 .SetHeader($"Select Gene for {chara.Name} ({remaining} remaining)");
         }
 
@@ -136,7 +136,7 @@ namespace SelectMiscreationFeat
             }
 
             if (stats.Count > 0)
-                summary += "(" + string.Join(", ", stats) + ")";
+                summary += "(" + string.Join(",", stats) + ")";
 
             return summary;
         }
