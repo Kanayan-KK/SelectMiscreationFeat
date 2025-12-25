@@ -51,7 +51,11 @@ namespace SelectMiscreationFeat
             // 候補を生成
             var candidates = new List<Thing>();
             var attempts = 0;
-            while (candidates.Count < 20 && attempts < 100)
+
+            // 選択肢数を設定値から取得（最大1000）
+            var choiceCount = Mathf.Min(Plugin.Instance?.ChoiceCount?.Value ?? 20, 1000);
+
+            while (candidates.Count < choiceCount && attempts < choiceCount * 10)
             {
                 // シード値の決定
                 var seed = chara.uid + step + (attempts * 1000);

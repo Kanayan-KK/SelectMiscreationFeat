@@ -18,11 +18,13 @@ internal class Plugin : BaseUnityPlugin
 {
     internal static Plugin? Instance;
     internal ConfigEntry<bool>? EnableRandom;
+    internal ConfigEntry<int>? ChoiceCount;
 
     private void Awake()
     {
         Instance = this;
         EnableRandom = Config.Bind("General", "EnableRandom", false, "Enable random gene");
+        ChoiceCount = Config.Bind("General", "ChoiceCount", 20, "The number of choices to display");
         Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), ModInfo.Guid);
     }
 
