@@ -4,21 +4,24 @@
     <id>SelectMiscreationFeat</id>
     <author>Kanayan-KK</author>
     <loadPriority>100</loadPriority>
-    <version>0.23.252</version>
+    <version>0.23.325</version>
     <tags>General,QoL,Cheat</tags>
     <description>
         マニ様による「できそこない」フィート消費時に付与される遺伝子を複数候補から選択可能にします。
         遺伝子はキャラクターのレベルに影響されます。
         以下のcfg設定値を変更できます。
         cfg設定値の変更には「[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3379819704]ModConfigGUI[/url]」の使用をおすすめします。
+        EnableMod: Mod機能自体の有効化
         Enable Random: 遺伝子を生成するSeed値がキャラIDに基づかない完全なランダムになります(Save and Loadで厳選が可能になります)
         Choice Count: 表示する選択肢数。（最大1000）
         Window Width: ウィンドウの横幅（文字がはみ出る場合に変更してください）
         [hr][/hr]
         Allows you to choose from multiple gene candidates granted when consuming the "Miscreation" feat by Mani.
         The genes provided are influenced by the character's level.
+        Fixed an issue where the UPGRADE achievement added by Elin would not unlock when this mod replaced the vanilla upgrade process.
         The following configuration values can be modified.
         We recommend using "[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3379819704]ModConfigGUI[/url]" to change configuration values.
+        EnableMod: Enables the functionality of this mod.
         Enable Random: The seed value for generating genes will be completely random and not based on the character ID (allows for selection via Save and Load).
         Choice Count: The number of choices to display (Max: 1000).
         Window Width: Width of the selection list (Adjust this if the text overflows.)
@@ -27,6 +30,7 @@
         获得的基因受角色等级影响。
         可以修改以下配置值。
         建议使用“[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3379819704]ModConfigGUI[/url]”来修改配置值。
+        EnableMod: 启用此 Mod 的功能。
         Enable Random: 生成基因的种子值将完全随机，不再基于角色ID（允许通过存档和读档进行筛选）。
         Choice Count: 显示的选项数量（最大1000）。
         Window Width: 选项列表的宽度（如果文字溢出请调整此项）。
