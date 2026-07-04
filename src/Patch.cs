@@ -11,6 +11,10 @@ namespace SelectMiscreationFeat
         [HarmonyPatch(typeof(DramaOutcome), nameof(DramaOutcome.upgrade_miscreation))]
         public static bool UpgradeMiscreation(DramaOutcome __instance)
         {
+            // Mod無効時はバニラ処理へ戻す
+            if (Plugin.Instance?.EnableMod != null && !Plugin.Instance.EnableMod.Value)
+                return true;
+
             // できそこないフィート(id 1248)を持つキャラクターを見つける
             var chara = EMono.pc.party.members.Find((Chara c) => !c.IsPC && c.HasElement(1248));
 
@@ -43,8 +47,9 @@ namespace SelectMiscreationFeat
         {
             if (remaining <= 0)
             {
-                // 乱数リセットして終了
+                // 元処理と同じく乱数を戻して実績を解除
                 Rand.SetSeed();
+                Steam.GetAchievement(ID_Achievement.UPGRADE);
                 return;
             }
 
