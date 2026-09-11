@@ -17,6 +17,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Remove="package\**"/>
+        <Compile Remove="tests\**"/>
         <Compile Update="Plugin.cs">
           <DependentUpon>package</DependentUpon>
         </Compile>

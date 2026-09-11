@@ -88,11 +88,14 @@ namespace SelectMiscreationFeat
             }
 
             // UIを表示
-            EClass.ui.AddLayer<LayerList>()
+            var visibleCandidates = new List<Thing>(candidates);
+            var summaries = new Dictionary<Thing, string>();
+            foreach (var candidate in candidates) summaries.Add(candidate, GetGeneSummary(candidate));
+            var layer = EClass.ui.AddLayer<LayerList>()
                 .SetSize(Plugin.Instance?.WindowWidth?.Value ?? 1000)
                 .SetList2(
-                    candidates,
-                    GetGeneSummary,
+                    visibleCandidates,
+                    t => summaries[t],
                     (t, _) =>
                     {
                         // 選択時
@@ -113,6 +116,8 @@ namespace SelectMiscreationFeat
                     }
                 )
                 .SetHeader($"Select Gene for {chara.Name} ({remaining} remaining)");
+            layer.gameObject.AddComponent<GeneSearch>()
+                .Initialize(layer, candidates, visibleCandidates, summaries);
         }
 
         /// <summary>
